@@ -1,0 +1,84 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente tech azul -->
+    <linearGradient id="techBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente para elementos -->
+    <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+    </linearGradient>
+    
+    <!-- Filtro glow -->
+    <filter id="glow1">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Patrón de grid sutil -->
+    <pattern id="grid1" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#475569" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Fondo base -->
+  <rect width="1200" height="600" fill="url(#techBg1)"/>
+  <rect width="1200" height="600" fill="url(#grid1)"/>
+  
+  <!-- Circuitos y líneas tecnológicas -->
+  <g opacity="0.4">
+    <!-- Líneas principales -->
+    <path d="M100 100 L300 100 L350 150 L600 150 L650 200 L900 200" 
+          stroke="url(#accent1)" stroke-width="2" fill="none"/>
+    <path d="M200 400 L400 400 L450 350 L700 350 L750 300 L1000 300" 
+          stroke="url(#accent1)" stroke-width="2" fill="none"/>
+    <path d="M150 250 L350 250 L400 300 L650 300" 
+          stroke="url(#accent1)" stroke-width="1.5" fill="none"/>
+    
+    <!-- Nodos de conexión -->
+    <circle cx="300" cy="100" r="4" fill="#06b6d4" filter="url(#glow1)"/>
+    <circle cx="350" cy="150" r="3" fill="#3b82f6" filter="url(#glow1)"/>
+    <circle cx="650" cy="200" r="4" fill="#06b6d4" filter="url(#glow1)"/>
+    <circle cx="400" cy="400" r="3" fill="#8b5cf6" filter="url(#glow1)"/>
+    <circle cx="750" cy="300" r="4" fill="#06b6d4" filter="url(#glow1)"/>
+    
+    <!-- Elementos rectangulares (chips/procesadores) -->
+    <rect x="280" y="80" width="40" height="40" rx="4" fill="none" stroke="#06b6d4" stroke-width="1.5" opacity="0.6"/>
+    <rect x="630" y="180" width="40" height="40" rx="4" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.6"/>
+    <rect x="380" y="380" width="40" height="40" rx="4" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity="0.6"/>
+    
+    <!-- Pequeñas líneas de datos -->
+    <g stroke="#06b6d4" stroke-width="1" opacity="0.3">
+      <path d="M320 85 L340 85 M320 90 L335 90 M320 95 L330 95"/>
+      <path d="M670 185 L690 185 M670 190 L685 190 M670 195 L680 195"/>
+      <path d="M420 385 L440 385 M420 390 L435 390 M420 395 L430 395"/>
+    </g>
+  </g>
+  
+  <!-- Elementos geométricos flotantes -->
+  <g opacity="0.2">
+    <polygon points="800,80 820,60 840,80 820,100" fill="#06b6d4"/>
+    <polygon points="500,500 520,480 540,500 520,520" fill="#3b82f6"/>
+    <polygon points="1000,400 1020,380 1040,400 1020,420" fill="#8b5cf6"/>
+  </g>
+  
+  <!-- Partículas luminosas -->
+  <g filter="url(#glow1)">
+    <circle cx="150" cy="180" r="1.5" fill="#06b6d4" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="950" cy="120" r="1" fill="#3b82f6" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="720" cy="450" r="1.5" fill="#8b5cf6" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+---
+const numeroWhatsApp = "5493875255853"; // Tu número con código de país
+const mensajeDefault =
+  "Hola, me interesa obtener más información.";
+---
+
+<header
+  class="w-ful fixed top-0 right-0 left-0 z-50 bg-white shadow-md transition-all duration-300"
+>
+  <div
+    class="mx-auto flex max-w-[1440px] items-center justify-between p-2"
+  >
+    <img
+    src="logo.svg"
+      alt="Logo Empresa"
+      class="h-20 w-auto"
+    />
+
+    <!-- <p>Nombre de Empresa</p> -->
+
+    <a
+      class="transform cursor-pointer rounded-lg bg-secondaryCyan px-6 py-3 font-semibold text-primario-50 shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-primaryBlue hover:shadow-lg active:scale-95"
+      href={`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeDefault)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Contactar
+    </a>
+  </div>
+</header>

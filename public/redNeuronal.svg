@@ -1,0 +1,100 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente neural -->
+    <linearGradient id="techBg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0b2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f3460;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="neuron" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.2" />
+    </radialGradient>
+    
+    <filter id="glow3">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Patrón de ondas sutiles -->
+    <pattern id="waves" width="60" height="30" patternUnits="userSpaceOnUse">
+      <path d="M0 15 Q15 5 30 15 T60 15" stroke="#6366f1" stroke-width="0.5" fill="none" opacity="0.1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="1200" height="600" fill="url(#techBg3)"/>
+  <rect width="1200" height="600" fill="url(#waves)"/>
+  
+  <!-- Red neural -->
+  <g opacity="0.7">
+    <!-- Nodos principales -->
+    <circle cx="200" cy="150" r="8" fill="url(#neuron)" filter="url(#glow3)"/>
+    <circle cx="400" cy="100" r="6" fill="url(#neuron)" filter="url(#glow3)"/>
+    <circle cx="600" cy="200" r="10" fill="url(#neuron)" filter="url(#glow3)"/>
+    <circle cx="800" cy="120" r="7" fill="url(#neuron)" filter="url(#glow3)"/>
+    <circle cx="1000" cy="180" r="9" fill="url(#neuron)" filter="url(#glow3)"/>
+    
+    <circle cx="150" cy="350" r="7" fill="url(#neuron)" filter="url(#glow3)"/>
+    <circle cx="350" cy="400" r="8" fill="url(#neuron)" filter="url(#glow3)"/>
+    <circle cx="550" cy="450" r="6" fill="url(#neuron)" filter="url(#glow3)"/>
+    <circle cx="750" cy="380" r="9" fill="url(#neuron)" filter="url(#glow3)"/>
+    <circle cx="950" cy="420" r="7" fill="url(#neuron)" filter="url(#glow3)"/>
+    
+    <!-- Conexiones neuronales -->
+    <g stroke="#a855f7" stroke-width="1.5" fill="none" opacity="0.5">
+      <path d="M200 150 L400 100"/>
+      <path d="M400 100 L600 200"/>
+      <path d="M600 200 L800 120"/>
+      <path d="M800 120 L1000 180"/>
+      
+      <path d="M150 350 L350 400"/>
+      <path d="M350 400 L550 450"/>
+      <path d="M550 450 L750 380"/>
+      <path d="M750 380 L950 420"/>
+      
+      <!-- Conexiones cruzadas -->
+      <path d="M200 150 L350 400" opacity="0.3"/>
+      <path d="M600 200 L750 380" opacity="0.3"/>
+      <path d="M400 100 L550 450" opacity="0.2"/>
+      <path d="M800 120 L950 420" opacity="0.3"/>
+    </g>
+    
+    <!-- Pulsos en las conexiones -->
+    <g>
+      <circle cx="300" cy="125" r="2" fill="#a855f7" filter="url(#glow3)">
+        <animateMotion dur="3s" repeatCount="indefinite">
+          <path d="M0 0 L100 -25"/>
+        </animateMotion>
+        <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="250" cy="375" r="2" fill="#6366f1" filter="url(#glow3)">
+        <animateMotion dur="4s" repeatCount="indefinite">
+          <path d="M0 0 L200 50"/>
+        </animateMotion>
+        <animate attributeName="opacity" values="1;0;1" dur="4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Elementos de IA flotantes -->
+  <g opacity="0.3">
+    <!-- Formas geométricas complejas -->
+    <polygon points="100,500 120,480 140,500 140,520 120,540 100,520 80,500 80,480" 
+             fill="none" stroke="#a855f7" stroke-width="1"/>
+    <polygon points="1100,100 1120,80 1140,100 1140,120 1120,140 1100,120 1080,100 1080,80" 
+             fill="none" stroke="#6366f1" stroke-width="1"/>
+    
+    <!-- Ondas de procesamiento -->
+    <path d="M500 300 Q520 280 540 300 T580 300" 
+          stroke="#a855f7" stroke-width="2" fill="none">
+      <animate attributeName="d" 
+               values="M500 300 Q520 280 540 300 T580 300;M500 300 Q520 320 540 300 T580 300;M500 300 Q520 280 540 300 T580 300" 
+               dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

@@ -1,0 +1,81 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente verde matrix -->
+    <linearGradient id="techBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1821;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a2332;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#06d6a0;stop-opacity:0.3" />
+    </linearGradient>
+    
+    <!-- Patrón de código binario -->
+    <pattern id="binary" width="20" height="20" patternUnits="userSpaceOnUse">
+      <text x="2" y="12" font-family="monospace" font-size="8" fill="#10b981" opacity="0.1">1</text>
+      <text x="12" y="12" font-family="monospace" font-size="8" fill="#06d6a0" opacity="0.1">0</text>
+    </pattern>
+    
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="1200" height="600" fill="url(#techBg2)"/>
+  <rect width="1200" height="600" fill="url(#binary)"/>
+  
+  <!-- Flujo de datos -->
+  <g opacity="0.6">
+    <!-- Líneas de datos principales -->
+    <path d="M0 200 Q300 180 600 200 T1200 200" 
+          stroke="url(#accent2)" stroke-width="3" fill="none"/>
+    <path d="M0 400 Q400 380 800 400 T1200 400" 
+          stroke="url(#accent2)" stroke-width="2" fill="none"/>
+    
+    <!-- Puntos de datos en movimiento -->
+    <circle cx="200" cy="200" r="3" fill="#10b981" filter="url(#glow2)">
+      <animateMotion dur="8s" repeatCount="indefinite">
+        <path d="M0 0 Q300 -20 600 0 T1200 0"/>
+      </animateMotion>
+    </circle>
+    <circle cx="150" cy="400" r="2" fill="#06d6a0" filter="url(#glow2)">
+      <animateMotion dur="10s" repeatCount="indefinite">
+        <path d="M0 0 Q400 -20 800 0 T1200 0"/>
+      </animateMotion>
+    </circle>
+  </g>
+  
+  <!-- Bloques de código/datos -->
+  <g opacity="0.4">
+    <rect x="100" y="100" width="150" height="80" rx="8" 
+          fill="none" stroke="#10b981" stroke-width="1.5"/>
+    <rect x="400" y="300" width="200" height="100" rx="8" 
+          fill="none" stroke="#06d6a0" stroke-width="1.5"/>
+    <rect x="800" y="150" width="180" height="90" rx="8" 
+          fill="none" stroke="#10b981" stroke-width="1.5"/>
+    
+    <!-- Líneas de código simuladas -->
+    <g stroke="#10b981" stroke-width="1" opacity="0.5">
+      <path d="M120 120 L230 120 M120 130 L210 130 M120 140 L240 140 M120 150 L220 150"/>
+      <path d="M420 320 L580 320 M420 330 L560 330 M420 340 L590 340 M420 350 L570 350 M420 360 L580 360"/>
+      <path d="M820 170 L960 170 M820 180 L940 180 M820 190 L970 190 M820 200 L950 200"/>
+    </g>
+  </g>
+  
+  <!-- Hexágonos tecnológicos -->
+  <g opacity="0.3">
+    <polygon points="300,50 320,40 340,50 340,70 320,80 300,70" 
+             fill="none" stroke="#10b981" stroke-width="1.5"/>
+    <polygon points="700,500 720,490 740,500 740,520 720,530 700,520" 
+             fill="none" stroke="#06d6a0" stroke-width="1.5"/>
+    <polygon points="1000,250 1020,240 1040,250 1040,270 1020,280 1000,270" 
+             fill="none" stroke="#10b981" stroke-width="1.5"/>
+  </g>
+</svg>
