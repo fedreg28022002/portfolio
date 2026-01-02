@@ -1,0 +1,222 @@
+/* ============================================
+     HERO SECTION - CONTENEDOR PRINCIPAL
+     ============================================ */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+  /* background: linear-gradient(
+    to bottom,
+    #0a0e27,
+    #0f172a,
+    #1e293b
+  ); */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+  text-align: center;
+  max-width: 1200px;
+}
+
+/* ============================================
+         ANIMACIONES DEL TEXTO
+         ============================================ */
+
+/* Typing effect para Code Craft - 10 caracteres incluyendo espacio */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInBracket {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmerGlow {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    filter: drop-shadow(
+      0 0 10px rgba(96, 165, 250, 0.6)
+    );
+  }
+  50% {
+    filter: drop-shadow(
+      0 0 25px rgba(96, 165, 250, 0.9)
+    );
+  }
+}
+
+/* Code Craft - Efecto de escritura sincronizado */
+.typing-text-glowing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  background-size: 200% auto;
+  letter-spacing: -0.02em;
+  /* "Code Craft" = 10 caracteres con espacio */
+  animation:
+    typing 1s steps(10, end) 0.5s
+      forwards,
+    shimmerGlow 4s linear 2.5s infinite,
+    pulseGlow 2s ease-in-out 2.5s
+      infinite;
+}
+
+/* Cursor parpadeante - sincronizado */
+.typing-cursor-glowing {
+  display: inline-block;
+  font-weight: 300;
+  filter: drop-shadow(
+    0 0 8px rgba(96, 165, 250, 0.8)
+  );
+  /* Aparece desde el inicio y parpadea */
+  animation: blink 0.8s step-end
+    infinite 0.5s;
+}
+
+/* Bracket derecho aparece cuando termina de escribir */
+.typing-bracket-glowing {
+  display: inline-block;
+  opacity: 0;
+  animation: slideInBracket 0.4s
+    ease-out 1s forwards;
+}
+
+/* Textos superior e inferior - AHORA SÍ APARECEN */
+.reveal-text {
+  opacity: 0;
+  animation: revealText 0.8s ease-out 2s
+    forwards;
+}
+
+.reveal-text-delayed {
+  opacity: 0;
+  animation: revealText 0.8s ease-out 2s
+    forwards;
+}
+
+/* ============================================
+         RESPONSIVE
+         ============================================ */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100svh;
+  }
+
+  .orb {
+    filter: blur(40px);
+  }
+
+  .orb-1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .orb-2 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .orb-3 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ============================================
+         ACCESIBILIDAD
+         ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .typing-text-glowing,
+  .typing-cursor-glowing,
+  .typing-bracket-glowing,
+  .reveal-text,
+  .reveal-text-delayed,
+  .grid-pattern,
+  .code-rain,
+  .gradient-overlay,
+  .orb {
+    animation: none;
+    opacity: 1;
+    width: auto;
+    filter: none;
+    transform: none;
+  }
+
+  .hero-background {
+    opacity: 0.3;
+  }
+}
+
+/* Escribir todo junto: <Code Craft> */
+.typing-text-complete {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 2.4s steps(12, end)
+    0.5s forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Cursor sincronizado */
+.typing-cursor-glowing {
+  animation: blink 0.8s step-end
+    infinite 0.5s;
+}

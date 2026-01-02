@@ -1,25 +1,68 @@
-<section
-  class="relative flex min-h-screen items-center justify-center bg-gray-50"
-> 
-  <div
-    class="relative max-w-4xl px-6 text-center z-10"
-  >
+---
+import "../styles/HeroSection.css";
+---
+
+<section class="hero-section">
+  <!-- Contenido del hero -->
+  <div class="hero-content">
     <h1
-      class="mb-6 text-6xl font-bold text-gray-900"
+      class="relative z-10 mb-6 font-bold leading-tight md:text-6xl lg:text-7xl"
     >
-      <span class="text-primaryBlue">&lt;Code</span>Craft&gt;
+      <span
+        class="reveal-text block text-xl font-light uppercase tracking-wider text-blue-100/70 md:text-2xl"
+      >
+        Soluciones reales.
+      </span>
+
+      <span
+        class="relative my-6 inline-flex items-center text-4xl md:text-6xl lg:text-8xl"
+      >
+        <!-- Efecto de glow detrás -->
+        <span
+          class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-600 opacity-50 blur-2xl"
+          aria-hidden="true"
+        >
+        </span>
+
+        <!-- Texto principal en una sola línea -->
+        <span
+          class="relative inline-flex items-baseline"
+        >
+          <!-- Todo se escribe como una sola unidad -->
+          <span
+            class="typing-text-complete text-4xl font-black md:text-6xl lg:text-8xl"
+          >
+            <span
+              class="text-blue-400/50"
+            >
+              &lt;
+            </span><span
+              class="mx-1 bg-gradient-to-r from-cyan-300 via-blue-400 to-blue-500 bg-clip-text text-transparent"
+            >
+              Code Craft
+            </span><span
+              class="text-blue-400/50"
+            >
+              &gt;
+            </span>
+          </span>
+          <span
+            class="typing-cursor-glowing ml-2 text-cyan-400"
+          >
+            |
+          </span>
+        </span>
+      </span>
+
+      <span
+        class="reveal-text-delayed mt-6 block text-xl font-normal tracking-wide text-blue-100 md:text-3xl"
+      >
+        Resultados <span
+          class="font-semibold text-cyan-300"
+        >
+          Inmediatos.
+        </span>
+      </span>
     </h1>
-    <p
-      class="mb-8 text-xl text-mediumGray"
-    >
-      Soluciones digitales a tu medida
-    </p>
-    <!-- <a
-      href="#contacto"
-      class="rounded-lg bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700"
-    >
-      Empezar Ahora
-    </a> -->
   </div>
-  <img src="flujoDatos.svg" alt="Fondo Red Neuronal" class="absolute inset-0 h-full w-full object-cover opacity-35 z-0" />
 </section>

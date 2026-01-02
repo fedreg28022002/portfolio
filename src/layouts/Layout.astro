@@ -2,24 +2,40 @@
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import "../styles/global.css";
+import "../styles/HeroSection.css";
+import "../styles/Servicios.css";
+import "../styles/background.css";
+import "../styles/Contact.css";
+import "../styles/Footer.css";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body >
-		<Header />
-		<main>
-		  <slot />
-		</main>
-		<Footer />
-	  </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/logo.svg"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <title>CodeCraft</title>
+  </head>
+  <body>
+    <!-- Fondo fijo global -->
+    <div class="page-background-fixed">
+    </div>
+
+    <!-- Contenido -->
+    <div class="page-content">
+      <slot />
+    </div>
+  </body>
 </html>
-
-

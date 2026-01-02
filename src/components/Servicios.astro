@@ -1,108 +1,162 @@
-<section class="flex  items-center px-6 py-16 bg-primario-950">
-    <div class="mx-auto max-w-6xl">
-        <div class="mb-12 text-center">
-            <h2 class="mb-4 text-3xl font-bold text-white">
-                Nuestros Servicios
-            </h2>
-            <p class="text-lg text-gray-300">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, velit.
-            </p>
-        </div>
-        
-        <!-- Grid Responsivo -->
-  <div
-    class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
-  >
-    <div class="transform rounded-xl border border-gray-100 bg-white p-3 max-h-40 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex items-center justify-center">
-      <div class="p-4 text-center">
-        <h3 class="mb-2 text-lg font-semibold text-gray-900">
-          Optimizacion y Visibilidad
-        </h3>
-        <p class="text-sm text-gray-600">
-          Posicionamiento en Google.
-        </p>
-      </div>
+---
+import "../styles/Servicios.css";
+
+const servicios = [
+  {
+    titulo:
+      "Optimización y Visibilidad",
+    descripcion:
+      "Posicionamiento estratégico en Google para aumentar tu presencia digital.",
+    icono: "🎯",
+  },
+  {
+    titulo:
+      "Desarrollo Web Profesional",
+    descripcion:
+      "Paginas web modernas y optimizados con las últimas tecnologías.",
+    icono: "🚀",
+  },
+  {
+    titulo: "Diseños Intuitivos",
+    descripcion:
+      "Interacción facil y natural conviertiendo visitantes en clientes.",
+    icono: "🎨",
+  },
+  {
+    titulo: "Soluciones Landing Page",
+    descripcion:
+      "Landing Pages para negocios y emprendedores.",
+    icono: "🛒",
+  },
+  {
+    titulo: "Diseño Web Personalizado",
+    descripcion:
+      "Diseños Web para llevar tu negocio al siguiente nivel.",
+    icono: "💡",
+  },
+  {
+    titulo: "Mantenimiento y Soporte",
+    descripcion:
+      "Actualizaciones continuas y soporte técnico para tu tranquilidad.",
+    icono: "🔧",
+  },
+];
+---
+
+<section
+  id="services-section"
+  class="services-section px-6 py-24"
+>
+  <div class="mx-auto max-w-7xl">
+    <!-- Header con animación -->
+    <div
+      class="services-header mb-16 text-center"
+    >
+      <h2
+        class="services-title reveal-on-scroll"
+      >
+        Nuestros Servicios
+      </h2>
+      <p
+        class="services-description reveal-on-scroll delay-1"
+      >
+        Soluciones digitales diseñadas
+        para impulsar tu presencia en
+        línea y hacer crecer tu negocio.
+      </p>
+    </div>
+
+    <!-- Grid de servicios con animación -->
+    <div class="services-grid">
+      {
+        servicios.map(
+          (servicio, index) => (
+            <div
+              class={`service-card reveal-on-scroll delay-${index + 1}`}
+            >
+              <div
+                class="service-card-icon"
+                data-icon={
+                  servicio.icono
+                }
+              />
+              <div class="service-card-content">
+                <h3 class="service-card-title">
+                  {servicio.titulo}
+                </h3>
+                <p class="service-card-description">
+                  {servicio.descripcion}
+                </p>
+              </div>
+            </div>
+          ),
+        )
+      }
+    </div>
   </div>
-
-    <!-- Tarjeta 2:  -->
-    <div
-      class="transform rounded-xl border border-gray-100 bg-white p-6 max-h-40 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex items-center justify-center"
-    >
-      <div
-        class="transform overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-      >
-        
-        <div class="p-4">
-          <h3
-            class="mb-2 text-lg font-semibold text-gray-900"
-          >
-            Zapatillas y Calzado
-            Deportivo
-          </h3>
-          <p
-            class="text-sm text-gray-600"
-          >
-            Lorem ipsum dolor sit amet
-            consectetur adipisicing
-            elit.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 3:  -->
-    <div
-      class="transform rounded-xl border border-gray-100 bg-white p-6 max-h-40 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex items-center justify-center"
-    >
-      <div
-        class="transform max-h-40 overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-      >
-        
-        <div class="p-4">
-          <h3
-            class="mb-2 text-lg font-semibold text-gray-900"
-          >
-            Accesorios (gorras,
-            mochilas)
-          </h3>
-          <p
-            class="text-sm text-gray-600"
-          >
-            Lorem ipsum dolor sit amet
-            consectetur adipisicing
-            elit.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 4: -->
-    <!-- <div
-      class="transform rounded-xl border border-gray-100 bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-    >
-      <div
-        class="transform overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-      >
-        <div
-          class="h-32 bg-gradient-to-r from-rose-300 to-rose-500"
-        >
-        </div>
-        <div class="p-4">
-          <h3
-            class="mb-2 text-lg font-semibold text-gray-900"
-          >
-            Remeras y Buzos de Marca
-          </h3>
-          <p
-            class="text-sm text-gray-600"
-          >
-            Lorem ipsum dolor sit amet
-            consectetur adipisicing
-            elit.
-          </p>
-        </div>
-      </div>
-    </div> -->
- 
-    
 </section>
+
+<script>
+  // Añade los íconos
+  document
+    .querySelectorAll(
+      ".service-card-icon",
+    )
+    .forEach((icon) => {
+      const emoji = icon.getAttribute(
+        "data-icon",
+      );
+      if (emoji) {
+        icon.innerHTML = emoji;
+        icon.removeAttribute(
+          "data-icon",
+        );
+      }
+    });
+
+  // Intersection Observer para animaciones de scroll
+  function initServiceReveal() {
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add(
+                "is-visible",
+              );
+              observer.unobserve(
+                entry.target,
+              );
+            }
+          });
+        },
+        observerOptions,
+      );
+
+    // Observa todos los elementos reveal-on-scroll dentro de esta sección
+    const revealElements =
+      document.querySelectorAll(
+        ".services-section .reveal-on-scroll",
+      );
+    revealElements.forEach((el) =>
+      observer.observe(el),
+    );
+  }
+
+  // Ejecuta cuando el DOM esté listo
+  if (
+    document.readyState === "loading"
+  ) {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initServiceReveal,
+    );
+  } else {
+    initServiceReveal();
+  }
+</script>

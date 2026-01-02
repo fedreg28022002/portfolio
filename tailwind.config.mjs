@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import typography from '@tailwindcss/typography';
 import { defineConfig } from "tailwindcss";
 
 /** @type {import('tailwindcss').Config} */

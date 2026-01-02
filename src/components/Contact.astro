@@ -1,22 +1,90 @@
 ---
-import ContactForm from "./ContactForm.jsx"
+import ContactForm from "./ContactForm.jsx";
+import "../styles/Contact.css";
 ---
 
-<section class="flex min-h-screen items-center px-6 py-16">
-    <div class="mx-auto max-w-6xl">
-        <div class="mb-12 text-center">
-            <h2
-              class="mb-4 text-3xl font-bold text-darkTest"
-            >
-              Contactanos!
-            </h2>
-            <p class="text-lg text-mediumGray">
-              Lorem, ipsum dolor sit amet
-              consectetur adipisicing elit.
-            </p>
-          </div>
-          <div>
-            <ContactForm client:load />
-          </div>
+<section
+  id="contact-section"
+  class="contact-section flex min-h-screen items-center px-6 py-24"
+>
+  <div class="mx-auto w-full max-w-7xl">
+    <!-- Header -->
+    <div
+      class="contact-header mb-16 text-center"
+    >
+      <h2
+        class="contact-title reveal-on-scroll"
+      >
+        ¡Contáctanos!
+      </h2>
+      <p
+        class="contact-description reveal-on-scroll delay-1"
+      >
+        Si necesitás una pagina web
+        profesional o landing page para
+        tu negocio o emprendimiento,
+        escribime y lo vemos.
+      </p>
     </div>
+
+    <!-- Form Wrapper -->
+    <div
+      class="contact-form-wrapper reveal-on-scroll delay-2 flex justify-center"
+    >
+      <ContactForm client:load />
+    </div>
+  </div>
 </section>
+
+<script>
+  // Intersection Observer para la animación del formulario
+  function initContactReveal() {
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Encuentra el form dentro del wrapper
+              const form =
+                entry.target.querySelector(
+                  ".contact-form",
+                );
+              if (form) {
+                form.classList.add(
+                  "is-visible",
+                );
+              }
+              observer.unobserve(
+                entry.target,
+              );
+            }
+          });
+        },
+        observerOptions,
+      );
+
+    const formWrapper =
+      document.querySelector(
+        ".contact-form-wrapper",
+      );
+    if (formWrapper) {
+      observer.observe(formWrapper);
+    }
+  }
+
+  if (
+    document.readyState === "loading"
+  ) {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initContactReveal,
+    );
+  } else {
+    initContactReveal();
+  }
+</script>
